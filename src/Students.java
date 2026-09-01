@@ -1,30 +1,46 @@
 public class Students
 {
-    //attributes
+    //3 attributes
     String FN;
     String LN;
     int Sid;
 
-    // This is static method
-    // Methods can be static and non-static
-    // This method returns nothing - return type is void
-    // Return/Parameter types can be - int, float, double, boolean, String, char
+    //Constructors don't have any return types and no argument, but they must have the same name as the class name and
+    // useful for initialization
+    Students()
+    {
+        FN="Tabitha";
+        LN="Thomas";
+        Sid=100413877;
 
-    // method name - main
-    // JVM accesses the static method using ClassName.MethodName executes
-    // JVM executes Student.main
+        FN="Andy";
+        LN="Thomas";
+        Sid=100538203;
+    }
+    Students(String FN, String LN, int Sid)
+    {
+        this.FN=FN;
+        this.LN=LN;
+        this.Sid=Sid;
+    }
+
     public static void main(String[] args)
     {
-        //If constructors are not defined, JVM will provide a default constructor
-        Students s1=new Students();
-        s1.FN="Tabitha";
-        s1.LN="Thomas";
-        s1.Sid=100413877;
 
-        //Use of dot operator (.)
+        Students s1=new Students();
+        Students s2=new Students();
+        Students s3=new Students("Shaun","Roberts",  + 100319546);
+
+        System.out.println("First Name: " + s3.FN);
+        System.out.println("Last Name: " +s3.LN);
+        System.out.println("Student ID: " +s3.Sid);
+
         System.out.println("First Name: " + s1.FN);
         System.out.println("Last Name: " +s1.LN);
         System.out.println("Student ID: " +s1.Sid);
-        System.out.println("Hello Constructors");
+
+        System.out.println("First Name: " + s2.FN);
+        System.out.println("Last Name: " +s2.LN);
+        System.out.println("Student ID: " +s2.Sid);
     }
 }
